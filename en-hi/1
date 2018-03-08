@@ -1,0 +1,11 @@
+import sys
+
+count = 1
+UNK = '_'
+for line in sys.stdin:
+	if not line.strip():
+		count = 1
+		sys.stdout.write("\n")
+
+	word, lang, tag = line.split("\t")
+	sys.stdout.write("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}".format(count, word, word, UNK, tag, UNK, UNK, UNK, UNK, 'Lang=' + lang + '|Orig=' + word))
